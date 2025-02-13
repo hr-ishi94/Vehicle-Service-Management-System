@@ -12,9 +12,11 @@ This is a full-stack application for managing vehicle service data, built with D
 
 ## Technologies
 - **Backend**: Django, Django Rest Framework, Sqlite3
-- **Frontend**: React, Vite , Redux Toolkit 
+- **Frontend**: React, Vite, Redux Toolkit,Tailwind CSS, React Router
 - **Database**: Sqlite3
 - **Charts Library**: Recharts
+- **Testing**: Unit Testing 
+
 
 
 ## Installation

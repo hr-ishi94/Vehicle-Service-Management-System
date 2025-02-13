@@ -26,7 +26,7 @@ const Home = () => {
       const vehicleIssues = prevCheckedIssues[vehicleId] || [];
       const updatedIssues = vehicleIssues.includes(issueId)
         ? vehicleIssues.filter(id => id !== issueId) 
-        : [...vehicleIssues, issueId]; // Check
+        : [...vehicleIssues, issueId]; 
       return { ...prevCheckedIssues, [vehicleId]: updatedIssues };
     });
   };

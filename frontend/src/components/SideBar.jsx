@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { logo } from '../utils/constants';
-import Dashboard from '../pages/Dashboard';
 import ComponentListView from './ComponentListView';
 import DashboardView from './DashboardView';
 
@@ -9,7 +8,7 @@ const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
 
-  // Close sidebar when clicked outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target) && !event.target.closest('[data-drawer-target]')) {

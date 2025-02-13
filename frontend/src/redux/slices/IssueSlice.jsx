@@ -6,7 +6,7 @@ const issueSlice = createSlice({
     initialState: { items: [], loading: false, error: null },
     reducers: {
       addIssueAction: (state, action) => {
-        state.items.push(action.payload); // Instantly add to UI
+        state.items.push(action.payload); 
       },
       updateIssueAction: (state, action) => {
         const index = state.items.findIndex(item => item.id === action.payload.id);
