@@ -85,14 +85,14 @@ The frontend will be running on `http://localhost:5173/`.
 - Make sure the frontend is making requests to the correct API URL provided by your backend server.
 
 
-https://youtu.be/fXzdst5s7DI
+
 
 # Vehicle Service Management System
 
 ## Demo Video
 Check out the demo of the Vehicle Service Management System:
 
-[![Vehicle Service Management System Demo Video](https://youtu.be/fXzdst5s7DI)]
+[![Vehicle Service Management System Demo Video](https://youtu.be/fXzdst5s7DI)](https://youtu.be/fXzdst5s7DI)
 
 ## Screenshots
 Here are some screenshots of the application:
