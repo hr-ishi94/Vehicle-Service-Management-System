@@ -8,7 +8,7 @@ This is a full-stack application for managing vehicle service data, built with D
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
 - [Running the Application](#running-the-application)
-- [License](#license)
+- [Demo](#demo)
 
 ## Technologies
 - **Backend**: Django, Django Rest Framework, Sqlite3
@@ -84,4 +84,23 @@ The frontend will be running on `http://localhost:5173/`.
 - The frontend and backend servers should be running simultaneously.
 - Make sure the frontend is making requests to the correct API URL provided by your backend server.
 
+
+https://youtu.be/fXzdst5s7DI
+
+# Vehicle Service Management System
+
+## Demo Video
+Check out the demo of the Vehicle Service Management System:
+
+[![Vehicle Service Management System Demo Video](https://youtu.be/fXzdst5s7DI)]
+
+## Screenshots
+Here are some screenshots of the application:
+
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215316.png)
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215341.png)
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215410.png)
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215455.png)
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215508.png)
+![Dashboard Screenshot](assets/Screenshot%202025-02-13%20215700.png)
 
