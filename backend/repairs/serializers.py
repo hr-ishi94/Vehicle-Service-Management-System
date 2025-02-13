@@ -16,6 +16,13 @@ class VehicleSerializer(serializers.ModelSerializer):
         model = Vehicle
         fields = '__all__'
 
+    def update(self, instance, validated_data):
+        if 'status' in validated_data:
+            instance.status = validated_data['status']
+        instance.save()
+        return instance
+    
+
 class IssueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Issue
