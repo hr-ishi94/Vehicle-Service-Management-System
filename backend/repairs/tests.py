@@ -7,20 +7,15 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 User = get_user_model()
 
-
 class RevenueAPITest(APITestCase):
-    def setUp(self):
-        
+    
+    def setUp(self):    
         self.operations_user = User.objects.create_user(username="operations", password="test123", role="operations")
         self.normal_user = User.objects.create_user(username="user", password="test123", role="user")
-
         refresh = RefreshToken.for_user(self.operations_user)
         self.operations_token = str(refresh.access_token)
-
         refresh = RefreshToken.for_user(self.normal_user)
         self.user_token = str(refresh.access_token)
-
-        
         self.revenue = Revenue.objects.create(date=now().date(), total_revenue=1000)
 
     def test_revenue_access_by_operations_user(self):

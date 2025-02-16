@@ -26,15 +26,15 @@ class IsReadOnly(permissions.BasePermission):
 
         if request.method in permissions.SAFE_METHODS:
             return True
-        
         return getattr(request.user, 'role', None) == 'operations'
+        
 
     
 class ComponentListCreateView(generics.ListCreateAPIView):
     queryset = Component.objects.all()
     serializer_class = ComponentSerializer
     authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsReadOnly]
+    permission_classes = [IsReadOnly]
 
 class ComponentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Component.objects.all()
@@ -44,10 +44,12 @@ class ComponentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class VehicleListCreateView(generics.ListCreateAPIView):
-    queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Vehicle.objects.filter(staff=self.request.user)
 
 class VehicleRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Vehicle.objects.all()

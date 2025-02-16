@@ -79,8 +79,6 @@ class Revenue(models.Model):
         amount = Decimal(str(amount))
         Revenue.objects.create(date=timezone.now().date(), total_revenue=amount)
 
-   
-
 
 class Repair(models.Model):
     STATUS_CHOICES = [
@@ -106,25 +104,9 @@ class Repair(models.Model):
         else:
             self.total_cost = Decimal(self.labor_cost)
         super().save(*args, **kwargs)
-
-        
         Revenue.update_revenue(self.total_cost)
 
         
-        if self.issue and self.status == 'completed':
-            all_repairs_completed = not self.issue.repairs.exclude(status='completed').exists()
-            if all_repairs_completed:
-                self.issue.status = 'resolved'
-                self.issue.save()
-
-    
-        vehicle = self.issue.vehicle
-        all_issues_resolved = not vehicle.issues.exclude(status='resolved').exists()
-        if all_issues_resolved:
-    
-            total_vehicle_cost = Repair.objects.filter(issue__vehicle=vehicle).aggregate(total=models.Sum('total_cost'))['total'] or 0.00
-            print(f"Total cost for vehicle {vehicle.vin}: {total_vehicle_cost}")
-            vehicle.update_total_cost()
 
 
 def get_vehicle_total_cost(vehicle_id):
