@@ -62,7 +62,7 @@ const ComponentListView = () => {
 
   return (
     <>
-      <div className="p-4 sm:ml-64 bg-zinc-900 border-l-2 border-zinc-800 h-full py-10 mt-15 px-10 max-md:h-screen">
+      <div className="p-4 sm:ml-64 bg-zinc-900 border-l-2 border-zinc-800 h-full py-10 mt-15 px-10 max-md:h-auto ">
         <div className="flex text-gray-300 justify-between px-1 my-5">
           <h1 className="uppercase font-bold">Component</h1><button onClick={handleOpenModal} className="bg-amber-700 px-2 py-1 rounded-lg">
         Add Component
@@ -73,7 +73,7 @@ const ComponentListView = () => {
 
         <div className="relative overflow-x-auto">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 max-md:hidden">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Component Name
@@ -95,10 +95,10 @@ const ComponentListView = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody >
               {items.map((component) => (
-                <tr key={component.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <tr key={component.id} className="md:table-row flex flex-col md:flex-row mb-2 md:mb-0 max-md:bg-gray-400 max-md:text-zinc-900 font-semibold max-md:rounded-lg">
+                  <th scope="row" className="px-6 py-4 font-medium max-sm:text-base text-gray-900 whitespace-nowrap dark:text-white">
                     {component.name}
                   </th>
                   <td className="px-6 py-4">
@@ -111,7 +111,7 @@ const ComponentListView = () => {
                     {component.stock}
                   </td>
                   <td className="px-6 py-4">
-                    {new Date(component.created_at).toLocaleDateString()}
+                    {new Date(component.created_at).toLocaleDateString('en-GB')}
                   </td>
                   <td className="px-6 py-4 flex gap-2">
                    

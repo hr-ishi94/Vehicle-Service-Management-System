@@ -22,9 +22,9 @@ const NavBar = () => {
     };
     
   return (
-    <div className=' fixed top-0 left-0 w-full text-white bg-zinc-900  py-3 px-16  flex items-center justify-between border-b-2 border-zinc-800 shadow-2xl max-sm:px-5' >
+    <div className='fixed z-50 top-0 left-0 w-full text-white bg-zinc-900 py-3 px-16 flex items-center justify-between border-b-2 border-zinc-800 shadow-2xl max-sm:px-5' >
         <div className="flex items-center gap-2">
-            <img src={logo} alt="logo" className="w-10 rounded-full border-white border-2 max-sm:w-5" />
+            <img src={logo} alt="logo" className="w-10 rounded-full border-2 max-sm:w-5" />
             <h1 className="text-xl font-bold text-gray-400 ">MechanicON</h1>
         </div>
         
